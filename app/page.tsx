@@ -21,7 +21,7 @@ const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left - rect.width / 2) / rect.width) * 2;
     const y = ((e.clientY - rect.top - rect.height / 2) / rect.height) * 2;
