@@ -88,7 +88,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
-            href="/Pictures/Gamalow.png"
+            href="/"
             className="flex items-center space-x-2 group"
           >
             <div className="p-2 rounded-lg">
