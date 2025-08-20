@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -28,6 +28,15 @@ import {
   Circle,
   Hexagon,
 } from "lucide-react";
+import { IconLeft } from "react-day-picker";
+
+// Ajouter cette interface avant le composant AboutPage
+interface Phase {
+  phase: string;
+  desc: string;
+  icon: React.ComponentType;
+  color: string;
+}
 
 const AboutPage = () => {
   const [activeTab, setActiveTab] = useState("experience");
@@ -132,8 +141,7 @@ const AboutPage = () => {
       year: "2015",
       title: "Roblox Studio",
       company: "Building",
-      description:
-        "Simple map assembly and learning Roblox Studio software",
+      description: "Simple map assembly and learning Roblox Studio software",
     },
     {
       year: "2020",
@@ -159,7 +167,8 @@ const AboutPage = () => {
   ];
 
   // Mouse tracking pour le logo
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!e.currentTarget) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left - rect.width / 2) / rect.width) * 2;
     const y = ((e.clientY - rect.top - rect.height / 2) / rect.height) * 2;
@@ -224,6 +233,39 @@ const AboutPage = () => {
       clearTimeout(timer);
     };
   }, []);
+
+  const phases: Phase[] = [
+    {
+      phase: "Concept",
+      desc: "Brief & Research",
+      icon: Target,
+      color: "bg-zinc-800/40",
+    },
+    {
+      phase: "Modeling",
+      desc: "3D sculpture",
+      icon: Box,
+      color: "bg-zinc-800/40",
+    },
+    {
+      phase: "Texturing",
+      desc: "Custom texture",
+      icon: Palette,
+      color: "bg-zinc-800/40",
+    },
+    {
+      phase: "Lighting",
+      desc: "Lighting and Rendering",
+      icon: Zap,
+      color: "bg-zinc-800/40",
+    },
+    {
+      phase: "Export",
+      desc: "Optimization",
+      icon: Download,
+      color: "bg-zinc-800/40",
+    },
+  ];
 
   return (
     <div className="min-h-screen overflow-hidden">
@@ -666,33 +708,7 @@ const AboutPage = () => {
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-                  {[
-                    {
-                      phase: "Concept",
-                      desc: "Brief & Research",
-                      icon: Target,
-                    },
-                    {
-                      phase: "Modeling",
-                      desc: "3D sculpture",
-                      icon: Box,
-                    },
-                    {
-                      phase: "Texturing",
-                      desc: "Custom texture",
-                      icon: Palette,
-                    },
-                    {
-                      phase: "Lighting",
-                      desc: "Lighting and Rendering",
-                      icon: Zap,
-                    },
-                    {
-                      phase: "Export",
-                      desc: "Optimization",
-                      icon: Download,
-                    },
-                  ].map((phase, index) => {
+                  {phases.map((phase, index) => {
                     const Icon = phase.icon;
                     return (
                       <div key={index} className="relative">
@@ -707,7 +723,10 @@ const AboutPage = () => {
                           <div
                             className={`w-16 h-16 rounded-2xl ${phase.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
                           >
-                            <Icon className="h-8 w-8 text-yellow-400" />
+                            <span className="text-yellow-400">
+                              {" "}
+                              <Icon />
+                            </span>
                           </div>
                           <h4 className="text-lg font-bold text-white mb-2">
                             {phase.phase}

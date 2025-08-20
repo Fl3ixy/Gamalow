@@ -3,9 +3,16 @@
 import { CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
+interface Render {
+  id: number;
+  title: string;
+  image: string;
+}
 
 export default function Home() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<Render | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Photos de rendus 3D
@@ -142,7 +149,7 @@ export default function Home() {
     },
   ];
 
-  const openModal = (render) => {
+  const openModal = (render: Render) => {
     setSelectedImage(render);
     if (typeof document !== "undefined") {
       document.body.style.overflow = "hidden";
@@ -158,7 +165,7 @@ export default function Home() {
 
   // Gestion du scroll lors du modal
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         closeModal();
       }
@@ -250,7 +257,7 @@ export default function Home() {
           <div className="flex justify-center mb-1 sm:mb-2">
             <div
               className="rounded-2xl relative cursor-pointer"
-              onMouseMove={(e) => {
+              onMouseMove={(e: React.MouseEvent<HTMLDivElement>) => {
                 const rect = e.currentTarget.getBoundingClientRect();
                 const x =
                   ((e.clientX - rect.left - rect.width / 2) / rect.width) * 2;
@@ -270,15 +277,9 @@ export default function Home() {
                   }}
                 >
                   <div className="absolute inset-0 transform translate-z-2 overflow-hidden">
-                    <a
-                      href="#"
+                    <Link
+                      href="/library"
                       className="w-full h-full block relative z-10"
-                      style={{
-                        backgroundImage: "url('/logo-dev.png')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                      }}
                     >
                       <Image
                         src="/Pictures/MyCreations.png"
@@ -287,19 +288,13 @@ export default function Home() {
                         height={180}
                         className="object-contain w-full h-full flex items-center justify-center"
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div className="absolute inset-0 transform translate-x-1 translate-y-1 -translate-z-2 opacity-80 overflow-hidden">
-                    <a
-                      href="#"
+                    <Link
+                      href="/library"
                       className="w-full h-full block opacity-80"
-                      style={{
-                        backgroundImage: "url('/logo-dev.png')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                    ></a>
+                    ></Link>
                   </div>
                 </div>
               </div>

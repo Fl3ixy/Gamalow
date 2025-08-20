@@ -17,11 +17,17 @@ import {
   User,
 } from "lucide-react";
 
+interface Service {
+  icon: React.ElementType;
+  title: string;
+  count?: string;
+}
+
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLImageElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left - rect.width / 2) / rect.width) * 2;
     const y = ((e.clientY - rect.top - rect.height / 2) / rect.height) * 2;
@@ -62,11 +68,11 @@ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     },
   ];
 
-  const services = [
-    { icon: Gamepad2, title: "Roblox Studio" },
-    { icon: Cpu, title: "Blender" },
-    { icon: Palette, title: "Substance 3D Painter" },
-    { icon: Star, title: "3D Designer" },
+  const services: Service[] = [
+    { icon: Gamepad2, title: "Roblox Studio", count: "Building" },
+    { icon: Cpu, title: "Blender", count: "3D" },
+    { icon: Palette, title: "Substance 3D Painter", count: "Texture" },
+    { icon: Star, title: "3D Designer", count: "Design" },
   ];
 
   useEffect(() => {
@@ -229,6 +235,7 @@ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
           {/* Enhanced Stats - Taille des cartes optimisée */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-6 max-w-4xl mx-auto px-4">
             {services.map((service, index) => {
+              const Icon = service.icon;
               return (
                 <div key={index} className="text-center group">
                   <div className="bg-zinc-800/30 hover:bg-zinc-700/40 backdrop-blur-sm border-2 border-zinc-600/50 hover:border-yellow-400/30 p-3 sm:p-4 md:p-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
@@ -237,7 +244,7 @@ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
                         {index === 0 && (
                           <Image
                             src="/Pictures/RobloxStudio.png"
-                            alt="Logo"
+                            alt={service.title}
                             width={32}
                             height={32}
                             className="w-full h-full flex items-center justify-center"
@@ -246,7 +253,7 @@ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
                         {index === 1 && (
                           <Image
                             src="/Pictures/Blender.png"
-                            alt="Logo"
+                            alt={service.title}
                             width={32}
                             height={32}
                             className="w-full h-full flex items-center justify-center"
@@ -255,7 +262,7 @@ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
                         {index === 2 && (
                           <Image
                             src="/Pictures/Subtance.png"
-                            alt="Logo"
+                            alt={service.title}
                             width={32}
                             height={32}
                             className="w-full h-full flex items-center justify-center"
@@ -264,7 +271,7 @@ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
                         {index === 3 && (
                           <Image
                             src="/Pictures/3Designer.png"
-                            alt="Logo"
+                            alt={service.title}
                             width={32}
                             height={32}
                             className="w-full h-full flex items-center justify-center"
