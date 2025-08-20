@@ -27,6 +27,7 @@ import {
   ArrowUp,
   Circle,
   Hexagon,
+  User,
 } from "lucide-react";
 import { IconLeft } from "react-day-picker";
 
@@ -370,10 +371,10 @@ const AboutPage = () => {
 
           {/* Boutons d'action */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link href="/library">
+            <Link href="/contact">
               <button className="group bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-white px-8 py-4 rounded-xl flex items-center space-x-3 text-lg font-bold shadow-2xl hover:shadow-yellow-400/25 transition-all transform hover:scale-105">
-                <Box className="h-6 w-6" />
-                <span>Views my creations</span>
+                <User className="h-6 w-6" />
+                <span>Contact me!</span>
                 <ChevronRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>

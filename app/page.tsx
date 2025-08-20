@@ -15,6 +15,7 @@ import {
   Zap,
   PencilRuler,
   User,
+  BoxIcon,
 } from "lucide-react";
 
 interface Service {
@@ -217,10 +218,10 @@ const HomePage = () => {
 
           {/* Boutons - Espacement très compact */}
           <div className="flex flex-col gap-2 sm:gap-3 justify-center items-center mb-4 md:mb-6 px-4">
-            <Link href="/about" className="group py-5 sm:py-6 md:py-7">
+            <Link href="/library" className="group py-5 sm:py-6 md:py-7">
               <button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 animate-[bounce_3s_infinite] text-white hover:opacity-90 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl flex items-center space-x-2 sm:space-x-3 text-base sm:text-lg md:text-xl font-bold shadow-2xl hover:shadow-yellow-400/25 transition-all transform hover:scale-105 w-full sm:w-auto justify-center">
-                <User className="h-5 w-5 sm:h-6 sm:w-6" />
-                <span>About me</span>
+                <BoxIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                <span>Views my creations</span>
                 <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>

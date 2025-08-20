@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Check, Star, Box, Shield, Clock, Users, Layers } from "lucide-react";
+import { Check, Star, Box, Shield, Clock, Users, Layers, User, ChevronRight, BoxIcon } from "lucide-react";
 import Link from "next/link";
 
 const PricingPage = () => {
@@ -72,7 +72,7 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen pt-16 md:pt-20 viewport-grid">
       {/* Hero Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 relative overflow-hidden">
+      <section className="py-10 md:py-16 lg:py-20 px-4 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center px-2">
           <div className="flex justify-center mb-6 md:mb-8">
             <div className="cube-3d w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden">
@@ -100,7 +100,24 @@ const PricingPage = () => {
             project benefits from my technical expertise and artistic passion
           </p>
         </div>
+
       </section>
+          {/* Boutons d'action */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Link href="/contact">
+              <button className="group bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-white px-8 py-4 rounded-xl flex items-center space-x-3 text-lg font-bold shadow-2xl hover:shadow-yellow-400/25 transition-all transform hover:scale-105">
+                <BoxIcon className="h-6 w-6" />
+                <span>Views my creations</span>
+                <ChevronRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+
+            <Link href="/contact">
+              <button className="bg-zinc-800/50 hover:bg-zinc-700/50 border-2 border-zinc-600 hover:border-yellow-400/50 px-8 py-4 rounded-xl text-lg text-white font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105">
+                <span>Start Project</span>
+              </button>
+            </Link>
+          </div>
 
       {/* Pricing Cards */}
       <section className="py-12 md:py-16 lg:py-20 px-4">
