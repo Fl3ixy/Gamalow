@@ -55,7 +55,7 @@ const HomePage = () => {
     {
       id: 3,
       title: "Environment Design/Creation",
-      category: "Environment Design/Creation",
+      category: "Spaceship Simulator",
       image: "/RenderMaps/SpaceshipSimulator3.png",
       description:
         "Map created for my own video game Spaceship Simulator, coming soon.",

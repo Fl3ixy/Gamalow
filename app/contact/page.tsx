@@ -236,7 +236,7 @@ const ContactPage = () => {
                       </h3>
                       <p className="text-gray-300 mb-6 leading-relaxed">
                         Contact me directly by email with the details of your
-                        project. I&apos;ll respond within 24 hours with a
+                        project. I&apos;ll respond within 48 hours with a
                         personalized quote!
                       </p>
 
