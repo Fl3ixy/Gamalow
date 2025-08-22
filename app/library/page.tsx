@@ -144,22 +144,22 @@ export default function Home() {
     },
     {
       id: 26,
-      title: "Spaceship Canon",
+      title: "Spaceship Loot Box",
       image: "RenderMaps/LootBox2.png",
     },
     {
       id: 27,
-      title: "Spaceship Canon",
+      title: "Spaceship Loot Box",
       image: "RenderMaps/LootBox3.png",
     },
     {
       id: 28,
-      title: "Spaceship Canon",
+      title: "Spaceship Loot Box",
       image: "RenderMaps/LootBox4.png",
     },
     {
       id: 29,
-      title: "Spaceship Canon",
+      title: "Spaceship Loot Box",
       image: "RenderMaps/LootBox1.png",
     },
     {
