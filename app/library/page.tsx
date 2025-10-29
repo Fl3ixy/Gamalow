@@ -16,278 +16,419 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Photos de rendus 3D
-  const renders = [
+const renders = [
     {
       id: 1,
-      title: "Castle inside",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d31a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d31a.png?width=1200",
     },
     {
       id: 2,
-      title: "Castle inside",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d4b44e.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d4b44e.png?width=1200",
     },
     {
       id: 3,
-      title: "Sci-Fi Environment",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8aa6a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8aa6a.png?width=1200",
     },
     {
       id: 4,
-      title: "Sci-Fi Environment",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e09ad9.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e09ad9.png?width=1200",
     },
     {
       id: 5,
-      title: "Spaceship Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0cf1432.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0cf1432.png?width=1200",
     },
     {
       id: 6,
-      title: "Spaceship Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fc1987.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fc1987.png?width=1200",
     },
     {
       id: 7,
-      title: "Spaceship Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e68d4a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e68d4a.png?width=1200",
     },
     {
       id: 8,
-      title: "Spaceship Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a5b88f.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a5b88f.png?width=1200",
     },
     {
       id: 9,
-      title: "Spaceship Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e2ac7d.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e2ac7d.png?width=1200",
     },
     {
       id: 10,
-      title: "Plants vs Zombies",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a8b9cd.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a8b9cd.png?width=1200",
     },
     {
       id: 11,
-      title: "Viking Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109416d.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109416d.png?width=1200",
     },
     {
       id: 12,
-      title: "Fire Station",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109f61f.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109f61f.png?width=1200",
     },
     {
       id: 13,
-      title: "Fire Station",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b103b202.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b103b202.png?width=1200",
     },
     {
       id: 14,
-      title: "Hell Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d26b.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d26b.png?width=1200",
     },
     {
       id: 15,
-      title: "Viking Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1037f60.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1037f60.png?width=1200",
     },
     {
       id: 16,
-      title: "SkyIsland",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f9ba47.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f9ba47.png?width=1200",
     },
     {
       id: 17,
-      title: "VBattle Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1190bb3.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1190bb3.png?width=1200",
     },
     {
       id: 18,
-      title: "Lava Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0cc00d5.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0cc00d5.png?width=1200",
     },
     {
       id: 19,
-      title: "Lava Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0c6a90d.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0c6a90d.png?width=1200",
     },
     {
       id: 20,
-      title: "Magical Tycoon",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a8810d.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a8810d.png?width=1200",
     },
     {
       id: 21,
-      title: "VBattle Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8ab15.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8ab15.png?width=1200",
     },
     {
       id: 22,
-      title: "VBattle Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b10a4787.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b10a4787.png?width=1200",
     },
     {
       id: 23,
-      title: "Airport",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f7b079.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f7b079.png?width=1200",
     },
     {
       id: 24,
-      title: "Anime Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0de15eb.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0de15eb.png?width=1200",
     },
     {
       id: 25,
-      title: "Anime Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8b2a2.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8b2a2.png?width=1200",
     },
     {
       id: 26,
-      title: "Anime Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f30801.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f30801.png?width=1200",
     },
     {
       id: 27,
-      title: "Dump Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8b942.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8b942.png?width=1200",
     },
     {
       id: 28,
-      title: "Castle Outside",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f6b8bb.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0f6b8bb.png?width=1200",
     },
     {
       id: 29,
-      title: "Alien Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b11be0c3.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b11be0c3.png?width=1200",
     },
     {
       id: 30,
-      title: "Dark Castle",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b11eef43.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b11eef43.png?width=1200",
     },
     {
       id: 31,
-      title: "Dark Castle",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1218570.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1218570.png?width=1200",
     },
     {
       id: 32,
-      title: "Dark Castle",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b10022b4.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b10022b4.png?width=1200",
     },
     {
       id: 33,
-      title: "Winter Dungeon",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b122aa4a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b122aa4a.png?width=1200",
     },
     {
       id: 34,
-      title: "Winter Dungeon",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b12316cf.png?width=1600",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b12316cf.png?width=1600",
     },
     {
       id: 35,
-      title: "Winter Dungeon",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1111737.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1111737.png?width=1200",
     },
     {
       id: 36,
-      title: "Island Japan",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b12236b4.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b12236b4.png?width=1200",
     },
     {
       id: 37,
-      title: "Island Japan",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b117771e.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b117771e.png?width=1200",
     },
     {
       id: 38,
-      title: "Medieval Props",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fbe05e.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fbe05e.png?width=1200",
     },
     {
       id: 39,
-      title: "Medieval Props",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fb1437.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fb1437.png?width=1200",
     },
     {
       id: 40,
-      title: "Giant Garden",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1230751.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b1230751.png?width=1200",
     },
     {
       id: 41,
-      title: "Giant Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d31a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d31a.png?width=1200",
     },
     {
       id: 42,
-      title: "Giant Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d4b44e.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d4b44e.png?width=1200",
     },
     {
       id: 43,
-      title: "Giant Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8aa6a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8aa6a.png?width=1200",
     },
     {
       id: 44,
-      title: "Flowers Environment",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e09ad9.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e09ad9.png?width=1200",
     },
     {
       id: 45,
-      title: "Hallowen Simulator",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0cf1432.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0cf1432.png?width=1200",
     },
     {
       id: 46,
-      title: "Jungle Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fc1987.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0fc1987.png?width=1200",
     },
     {
       id: 47,
-      title: "Jungle Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e68d4a.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e68d4a.png?width=1200",
     },
     {
       id: 48,
-      title: "Random map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a5b88f.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a5b88f.png?width=1200",
     },
     {
       id: 49,
-      title: "London Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e2ac7d.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0e2ac7d.png?width=1200",
     },
     {
       id: 50,
-      title: "London Map",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a8b9cd.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6d4a8b9cd.png?width=1200",
     },
     {
       id: 51,
-      title: "Medium Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109416d.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109416d.png?width=1200",
     },
     {
       id: 52,
-      title: "Medium Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109f61f.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b109f61f.png?width=1200",
     },
     {
       id: 53,
-      title: "Medium Island",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b103b202.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b103b202.png?width=1200",
     },
     {
       id: 54,
-      title: "Obby",
-      image: "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d26b.png?width=1200",
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff6b0d8d26b.png?width=1200",
     },
-  ];
+    {
+      id: 55,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e6e6f57.png",
+    },
+    {
+      id: 56,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e6f284b.png",
+    },
+    {
+      id: 57,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e700638.png",
+    },
+    {
+      id: 58,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e7c9bb9.png",
+    },
+    {
+      id: 59,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e7c9428.png",
+    },
+    {
+      id: 60,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e6e7e88.png",
+    },
+    {
+      id: 61,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e7c9f99.png",
+    },
+    {
+      id: 62,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e6afddb.png",
+    },
+    {
+      id: 63,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e7764ba.png",
+    },
+    {
+      id: 64,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e6eb048.png",
+    },
+    {
+      id: 65,
+      image:
+        "https://images.cdn-files-a.com/uploads/7854194/2000_64b411a102346.png",
+    },
+    {
+      id: 66,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e77f79e.png",
+    },
+    {
+      id: 67,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9ba370e2d.png",
+    },
+    {
+      id: 68,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e70ea49.png",
+    },
+    {
+      id: 69,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9ba22b4a9.png",
+    },
+    {
+      id: 70,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e7057b9.png",
+    },
+    {
+      id: 71,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_68ff68e7a39ee.png",
+    },
+    {
+      id: 72,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_66e7d0284dec6.png",
+    },
+    {
+      id: 73,
+      image:
+        "https://images.cdn-files-a.com/uploads/7854194/2000_64956610c665d.png",
+    },
+    {
+      id: 74,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c70bf016.jpg",
+    },
+    {
+      id: 75,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c72318aa.jpg",
+    },
+    {
+      id: 76,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c712cb2f.jpg",
+    },
+    {
+      id: 77,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c71bfbe4.jpg",
+    },
+    {
+      id: 78,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c71ebf99.jpg",
+    },
+    {
+      id: 79,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c7375472.jpg",
+    },
+    {
+      id: 80,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c7234744.jpg",
+    },
+    {
+      id: 81,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c716de22.jpg",
+    },
+    {
+      id: 82,
+      image:
+        "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c722ddf7.jpg",
+    },
+];
+
 
   const openModal = (render: Render) => {
     setSelectedImage(render);
