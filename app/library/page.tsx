@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface Render {
   id: number;
-  title: string;
+  title?: string;
   image: string;
 }
 
@@ -16,7 +16,7 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Photos de rendus 3D
-const renders = [
+  const renders = [
     {
       id: 1,
       image:
@@ -427,8 +427,7 @@ const renders = [
       image:
         "https://files.cdn-files-a.com/uploads/7854194/2000_685d9c722ddf7.jpg",
     },
-];
-
+  ];
 
   const openModal = (render: Render) => {
     setSelectedImage(render);
@@ -653,8 +652,6 @@ const renders = [
           </div>
         </div>
       </section>
-
-      {/* Galerie sans descriptions */}
       <main className="px-6 pb-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -667,21 +664,12 @@ const renders = [
                 <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={render.image}
-                    alt={render.title}
+                    alt={`Render ${render.id}`}
                     width={400}
                     height={400}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     priority={render.id <= 3}
                   />
-
-                  {/* Overlay avec titre uniquement au survol */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4">
-                      <h3 className="text-white font-bold text-lg">
-                        {render.title}
-                      </h3>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
@@ -725,7 +713,7 @@ const renders = [
               <div className="relative bg-black/50 flex items-center justify-center rounded-lg">
                 <Image
                   src={selectedImage.image}
-                  alt={selectedImage.title}
+                  alt={selectedImage.title ?? `Render ${selectedImage.id}`}
                   width={1200}
                   height={800}
                   className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
